@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy text generator</title>
+    <style>
+        body{
+            
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .hero{
+            margin-bottom: 30px;
+        }
+        .hero-area{
+            width: 400px;
+            margin: 0 auto;
+            height: 150px;
+            background-color: bisque;
+            border-radius: 9px;
+            text-align: center;
+        }
+        h1{
+            font-size: 1.5rem;
+            text-align: center;
+            padding-top: 20px;
+        }
+        button{
+            width: 30%;
+            font-size: 1rem;
+            background-color: #ebc930;
+            border: none;
+            padding: 7px;
+        }
+        .para-area{
+            width: 90%;
+            margin: 0 auto;
+            background-color: bisque;
+            border-radius: 8px;
+            padding: 8px;
+            height: auto;    
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-area">
+            <h1>Dummy text generator</h1>
+            <button>Generate</button>
+        </div>
+        
+    </div>
+    <div class="para-area">
+        <p>Dummy text.........</p>
+    </div>
+
+    <script>
+
+        const btn = document.querySelector('button');
+        const para = document.querySelector('p')
+                var words = ["The sky", "above", "the port", "was", "the color of television", "tuned", "to", "a dead channel", ".", "All", "this happened", "more or less", ".", "I", "had", "the story", "bit by bit", "from various people", "and", "as generally", "happens", "in such cases", "each time", "it", "was", "a different story", ".", "It", "was", "a pleasure", "to", "burn"];
+
+        function randomSentence() {
+        var n = 1000;
+        var sentence = "";
+        while (n--) {
+            sentence += words[Math.floor(Math.random() * words.length)] + " ";
+        }
+        return sentence;
+        }
+        btn.addEventListener('click',()=>{
+            para.innerHTML = randomSentence()
+        })
+    </script>
+</body>
+</html>
